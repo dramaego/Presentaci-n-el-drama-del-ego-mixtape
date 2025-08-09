@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>El Drama del Ego - Presentación</title>
+<style>
+  body {
+    margin: 0;
+    background: black;
+    overflow: hidden;
+    color: white;
+    font-family: monospace;
+    text-align: center;
+  }
+  canvas {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+  #contenido {
+    position: relative;
+    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  #imagen {
+    cursor: pointer;
+    max-width: 300px;
+  }
+  #texto {
+    display: none;
+    max-width: 90%;
+    margin: 20px auto;
+    text-align: left;
+    white-space: pre-line;
+  }
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="contenido">
+  <img id="imagen" src="png-clipart-folder-file-document-download-icon-8-bit-pixel-pixel-art" alt="Imagen del proyecto">
+  <div id="texto"></div>
+</div>
+
+<script>
+// Fondo de estrellas
+const canvas = document.getElementById("c");
+const ctx = canvas.getContext("2d");
+canvas.width = innerWidth;
+canvas.height = innerHeight;
+
+let estrellas = [];
+for (let i = 0; i < 300; i++) {
+  estrellas.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    r: Math.random() * 1.5,
+    v: Math.random() * 0.5
+  });
+}
+
+function dibujarEstrellas() {
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.fillStyle = "white";
+  for (let e of estrellas) {
+    ctx.beginPath();
+    ctx.arc(e.x, e.y, e.r, 0, Math.PI*2);
+    ctx.fill();
+    e.y += e.v;
+    if (e.y > canvas.height) e.y = 0;
+  }
+}
+
+function animar() {
+  dibujarEstrellas();
+  requestAnimationFrame(animar);
+}
+animar();
+
+// Texto del proyecto
+const textoProyecto = `El Drama del Ego
+Presentación del Proyecto Musical de Daniel Ruiz (Egodrama)
+Hola a todos, mi nombre es Daniel Ruiz, también conocido como Egodrama.
+Soy productor y rapero, y quiero presentarles mi más reciente proyecto, que se llama "El Drama del Ego".
+Es un mixtape de 14 canciones, cuyo nombre es el resultado de mi proceso, aprendizaje personal,
+experiencia de vida y estudio sobre la mente humana y el arte.
+Es la compilación de lo que más energía he dedicado en los últimos años, resultando como la obra con la
+cual presento lo que he querido que sea mi mayor esfuerzo de querer hacer de mi vida algo útil y querer
+darle un propósito superior.
+El Concepto
+"El Drama del Ego", en pocas palabras, es una advertencia que en estos días es crucial, pero que no
+identificamos por lo regular, ya que vivimos en un ecosistema hostil, todo el tiempo rodeado de
+amenazas que parecen inofensivas y de ilusiones que parecen reales.
+Este es mi más humilde, sincero y puro aporte al mundo y al universo, aspirando devolverle a él y a la
+vida lo mismo que me dieron, que me salvó y que agradezco con total convicción.
+Cada una de las 14 canciones es un concepto musical individual que nació de una época o vivencia
+artística específica que tuve a lo largo de más de 8 años que llevo de formación artística y personal,
+desde que aprendí a hacer música, a producir y a crear.
+Mi Propósito
+Mi propósito con este proyecto, y no solo con este sino también con lo que haré en el futuro, es construir
+y crear un espacio como el que yo encontré, un espacio en el cual uno pueda encontrarse en medio del
+vacío, uno que no se desvanezca, que roce los márgenes de la inmortalidad, trascienda el tiempo y
+perdure en los corazones de quien tenga que perdurar.
+Las canciones y el propósito que les comparto no son un mensaje de autoayuda que quiero vender,
+porque eso sería lo contrario a lo que deseo lograr.
+La Analogía del Espejo Retrovisor
+"El Drama del Ego" tiene un subtítulo o eslogan (que anteriormente iba a ser el nombre del mixtape),
+pero lo cambié porque es muy largo, que sirve de ancla directa junto con la portada para dar a entender
+el concepto de que es una advertencia.
+El eslogan o subtítulo es el que tienen todos los espejos retrovisores contramarcado, que dice: "Los
+objetos en el espejo están más cerca de lo que aparentan".
+Esta advertencia en estos espejos en particular está advirtiendo una ilusión óptica que distorsiona la
+distancia real de los objetos que se ven reflejados, mostrándolos más lejos o más cerca de lo que están
+en la realidad.
+Elegí esta advertencia para "El Drama del Ego" como una analogía al arte para mostrarlo como lo que es:
+una herramienta de liberación del apego, que siempre está presente y advirtiendo algo, pero que no
+siempre es atendida, y es ignorada como muchas otras advertencias, por nuestro propio drama interno.
+El Enfoque Narrativo
+En ninguna canción se va a abordar directamente el problema del drama del ego, o cómo solucionarlo; se
+aborda más bien la narrativa de la experiencia de vivir deliberadamente en el drama o fuera de él, y
+escucharlo materializado en forma de canción con el propósito de embelesar y cautivar.
+Este mixtape es una compilación de conceptos musicales que sirven como una distracción encantadora o
+representación del ego en sí, dependiendo de la perspectiva del oyente, abriéndoles así la puerta a la
+introspección, al auto análisis personal y a la observación de la mutación del juicio de lo que percibimos
+al pasar diferentes vivencias, situaciones o estados mentales a lo largo del desarrollo de nuestra vida,
+buscando una comprensión más amplia de nuestras experiencias.
+Mi Experiencia Personal
+El arte es la verdad para muchos que andan buscando sentido a su existencia, pero como lo fue en mi
+caso, por gracia de mi ego y del drama, las cosas que elegí porque las vi en mi vida como las más
+atractivas y cercanas, las forzaba para que esas fueran las bases que quería que construyeran mi realidad.
+Pero, mientras pasaban los días, meses y años, me daba cuenta que no estaba logrando nada realmente
+valioso por perseguir esas ideas; si no, al contrario, me alejaba más de lo que en realidad sabía que
+necesitaba, porque caí en la ilusión del retrovisor: lo que veía cercano no era la realidad, y lo que en
+verdad necesitaba, pues, lo veía tan alejado que hasta lo ignoraba, y en realidad estaba más cerca de lo
+que aparentaba.
+Ahora, al darme cuenta que había estado enfrente de mis narices todo el tiempo, vivo la desilusión de ver
+los escombros y las cenizas que dejó una búsqueda errada en medio del drama por la obsesión de
+control del ego que me hacía perder el tiempo y me alejaba de lo que necesitaba realmente, lo que ya
+tenía conmigo en el presente.
+Una Manifestación de Amor
+La manera en que quiero que vean este mixtape es como una manifestación de amor puro de mi parte y
+un regalo para ustedes, porque fuera del drama que tuvo su proceso de creación, cada una de las 14
+canciones del mixtape fueron creadas desde el día uno con un solo principio: amor intenso inexplicable.
+Ahora que veo el resultado final, se me encharcan los ojos al saber que puedo decir que logré llevar a
+cabo un sueño que no sabía cuándo iba a darse.
+La materialización onírica es ese instante único en el que una obra coincide plenamente con la visión que
+el creador albergó como sueño y que refleja intactos sus criterios y emociones, convierte en tangible lo
+que antes solo existía en la mente, supera las barreras y expectativas propias y desata un gozo intenso y
+casi físico al comprobar que el anhelo interior ha cobrado forma en la realidad.
+Todos y cada uno de los elementos sonoros, desde sus armonías hasta sus letras, son precisamente lo
+que alguna vez soñé como una producción que al verla nacer me llenaría de total orgullo, así como un
+padre que llora al ver su primogénito nacer.
+La Vocación Artística
+No hice este álbum para venderlo. No lo hice para competir, ni para seguir tendencias o modas pasajeras,
+ni para cumplir con lo que se espera de un artista en redes sociales hoy en día, uno que trata el arte
+como algo desechable.
+De hecho, se puede evidenciar la poca receptividad que conservo actualmente en mis redes sociales.
+Lo hice porque había algo en mí que necesitaba decirse, algo que necesitaba materializarse, así no
+hubiera nadie escuchando. "EL DRAMA DEL EGO" nació porque para mí llegó en forma de canción y letra,
+la sabiduría eterna que solo puede ser otorgada por DIOS, aun cuando ni sabía que era él quien me
+hablaba todo el tiempo.
+Y así fue como me embarqué en una aventura que ni siquiera sé hasta el día de hoy dónde va a terminar,
+sacrificando todas las muchas otras opciones que tuve de explotar mi talento y mis capacidades en
+diferentes vocaciones, carreras o trabajos, que pudieron haber sido caminos menos escabrosos que este,
+pero que no rendirían homenaje a lo que alguna vez mi creador me confirió.
+Recientemente una persona ya bastante adulta me dijo que percibió en mi mirada que tenía ojos de
+lince, porque miraba con mucha profundidad. Eso resonó mucho conmigo porque desde pequeño he
+sentido que he sido dotado con una capacidad de visión prominente, una que me obliga a utilizarla para
+lo que toda persona debería utilizar sus mejores habilidades: para aportar a la evolución de la
+humanidad.
+Y lo que me dijo DIOS en este idioma encriptado fue que con ninguna de las otras vocaciones que
+existen en el mundo, yo podría lograr plenamente mi propósito.
+El Compromiso con el Arte
+Con esto no estoy diciendo que ya lo logré; estoy diciendo que fui leal a lo que me dio vida, al arte y a la
+música más precisamente empaquetada en un género que me recibió con amor: EL HIPHOP.
+Pero también sería una mentira decir que no deseo que llegue a alguien. Porque si esta obra logra
+encontrarse con quienes también están atravesando su propio drama interno, entonces esta
+manifestación de amor habrá cumplido su ciclo.
+No tengo una estrategia para "venderles" esto. Lo que tengo es la certeza de que lo que siento por este
+proyecto es real porque lo viví en carne propia y lo di todo por él, y que quien pueda verlo va a encontrar
+algo que le resonará en lo más profundo.
+Porque de lo que he aprendido del arte es que las cosas que conectan genuinamente lo hacen no porque
+tengan un sentido explicable, sino porque tienen un sentido dentro del corazón del que lo consume, y de
+él las hizo.
+Agradecimientos
+Así concluyo, manifestando mi gratitud, mencionando a las personas que aportaron a lo que es
+Egodrama hoy día:
+A mis referentes musicales, quienes considero son los artistas que me mostraron que esto que sueño es
+posible, con la evidencia que me inspiró que es su obra, como Crudo Means Raw, Pharrell Williams, Dr.
+Dre, Kanye West y Kendrick Lamar.
+A mi amigo y productor de video Sebastián Herrera, conocido también como Stalker, quien me ha
+demostrado que las palabras amor, autenticidad y amistad no se necesitan nombrar una sola vez cuando
+se demuestran con actos.
+A mi amigo, socio y mentor en el rap, que veo como un hermano, Abel Arias, a quien le debo que me
+haya presentado este mundo y cultura hip hop de la cual me enamoré.
+A Juan Camilo Sánchez, quien ha sido mi mentor en los temas más técnicos de producción musical.
+A Mario Aguadelo, un viejo amigo, que me enseñó que los sueños no son solo inherentes a una
+dimensión onírica.
+Y por supuesto a mis padres:
+Mi madre María Nelly Betancourt, a quien le debo mi vida entera y la manifestación de Dios en mi vida.
+Y a mi padre Eduardo Antonio Ruiz, quien me enseñó que la palabra nobleza no significa ser solamente
+honrado y de buen corazón, sino que es la forma más pura de vivir dando amor desinteresadamente.
+`;
+
+// Mostrar texto al hacer clic en la imagen
+document.getElementById("imagen").addEventListener("click", () => {
+  document.getElementById("texto").textContent = textoProyecto;
+  document.getElementById("texto").style.display = "block";
+});
+</script>
+</body>
+</html>
